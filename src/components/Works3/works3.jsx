@@ -125,7 +125,7 @@ const Works3 = () => {
                           <h4>
                             <span
                             >
-                              <a href={`/project-details2/project-details2-dark/?q=${work._id}`} target="_blank">{work.title}</a>
+                              <a href={`/project-details2/project-details2-dark/?q=${work._id}`} target="_blank" rel="noreferrer">{work.title}</a>
                               
                             </span>
                           </h4>
