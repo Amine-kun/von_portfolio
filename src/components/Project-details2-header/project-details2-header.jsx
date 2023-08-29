@@ -46,7 +46,7 @@ const ProjectDetails2Header = ({ projectHeaderData }) => {
               <h6>Categories</h6>
               <p>
                 {projectHeaderData?.categories?.map((cat, index) => (
-                    <a>
+                    <a key={index}>
                       {cat}
                       {projectHeaderData.categories.length != index + 1
                         ? " ,"
