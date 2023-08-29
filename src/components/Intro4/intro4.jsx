@@ -10,7 +10,7 @@ const Intro4 = ({ sliderRef, blackStar }) => {
     pid.childNodes[0].classList.add("canva");
 
     let child = document.querySelector('.canva')
-    child.style.position = 'unset !important';
+    child.style.position = 'unset';
     
   }, [])
 
