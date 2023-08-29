@@ -1,11 +1,11 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import ClientsData from "../../data/sections/clients.json";
 import Split from "../Split";
 
 const Clients = ({theme}) => {
-  var first = ClientsData.slice(0, ClientsData.length / 2);
-  var second = ClientsData.slice(4, ClientsData.length);
+  // var first = ClientsData.slice(0, ClientsData.length / 2);
+  // var second = ClientsData.slice(4, ClientsData.length);
+
   return (
     <section className="clients section-padding">
       <div className="container">
@@ -25,7 +25,7 @@ const Clients = ({theme}) => {
           <div className="col-lg-8">
             <div>
               <div className="row bord">
-                {first.map((item) => (
+                {ClientsData.map((item) => (
                   <div key={item.id} className="col-md-3 col-6 brands">
                     <div
                       className="item wow fadeIn"
@@ -49,11 +49,12 @@ const Clients = ({theme}) => {
                         )}
                         <Split>
                           <a
-                            href="#0"
+                            href={`https://${item.url}`}
+                            target="_blank"
                             className="link words chars splitting"
                             data-splitting
                           >
-                            {item.url}
+                            {item.name}
                           </a>
                         </Split>
                       </div>
@@ -61,7 +62,7 @@ const Clients = ({theme}) => {
                   </div>
                 ))}
               </div>
-              <div className="row">
+              {/*<div className="row">
                 {second.map((item) => (
                   <div
                     key={item.id}
@@ -110,7 +111,7 @@ const Clients = ({theme}) => {
                     </div>
                   </div>
                 ))}
-              </div>
+              </div>*/}
             </div>
           </div>
         </div>

@@ -88,3 +88,23 @@ body.hideX .pace {
 .app-footer .social a {
   margin-right: 4px;
 }
+
+
+.img_over{
+  position: absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  object-fit:cover;
+}
+
+.overlay_over{
+  position: absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter:blur(7px);
+  background-image: linear-gradient(to top,#111215, transparent);
+}

@@ -1,20 +1,35 @@
-/* eslint-disable @next/next/no-css-tags */
-/* eslint-disable @next/next/no-img-element */
-import React from "react";
+
+import React, {useEffect, useState} from "react";
 import Head from "next/head";
-import worksData from "../../data/sections/works.json";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import Swiper core and required modules
+
 import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
 import Link from "next/link";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+
+import {client} from '../../client';
+import {urlFor} from '../../client';
+
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const Works3 = () => {
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
+
+  const [worksData, setWorksData] = useState([]);
+
+
+  useEffect(() => {
+          const query = '*[_type == "work"]';
+
+          client.fetch(query).then((data) => {
+            setWorksData(data);
+          });
+        }, []);
+
+
   return (
     <>
       <Head>
@@ -89,85 +104,36 @@ const Works3 = () => {
                     },
                   }}
                 >
-                  <SwiperSlide className="swiper-slide">
-                    <div className="content">
-                      <div className="img">
-                        <span className="imgio">
-                          <span className="wow cimgio" data-delay="500"></span>
-                          <img src={worksData[0].image} alt="" />
-                        </span>
-                      </div>
-                      <div className="cont">
-                        <h6>
-                          <Link
-                            href={`/works3/works3-dark`}
-                          >
-                            {worksData[0].title}
-                          </Link>
-                        </h6>
-                        <h4>
-                          <Link
-                            href={`/project-details2/project-details2-dark`}
-                          >
-                            {worksData[0].secTex}
-                          </Link>
-                        </h4>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide className="swiper-slide">
-                    <div className="content">
-                      <div className="img">
-                        <span className="imgio">
-                          <span className="wow cimgio" data-delay="500"></span>
-                          <img src={worksData[1].image} alt="" />
-                        </span>
-                      </div>
-                      <div className="cont">
-                        <h6>
-                          <Link
-                            href={`/works3/works3-dark`}
-                          >
-                            {worksData[1].title}
-                          </Link>
-                        </h6>
-                        <h4>
-                          <Link
-                            href={`/project-details2/project-details2-dark`}
-                          >
-                            {worksData[1].secTex}
-                          </Link>
-                        </h4>
-                      </div>
-                    </div>
-                  </SwiperSlide>
+                  
+                  {worksData.map((work,i)=>(
 
-                  <SwiperSlide className="swiper-slide">
-                    <div className="content">
-                      <div className="img">
-                        <span className="imgio">
-                          <span className="wow cimgio" data-delay="500"></span>
-                          <img src={worksData[2].image} alt="" />
-                        </span>
+                    <SwiperSlide className="swiper-slide" key={i}>
+                      <div className="content">
+                        <div className="img">
+                          <span className="imgio">
+                            <span className="wow cimgio" data-delay="500"></span>
+                            <img src={urlFor(work.thumb)} alt="" />
+                          </span>
+                        </div>
+                        <div className="cont">
+                          <h6>
+                            <span
+                            >
+                              {work.sub}
+                            </span>
+                          </h6>
+                          <h4>
+                            <span
+                            >
+                              <a href={`/project-details2/project-details2-dark/?q=${work._id}`} target="_blank">{work.title}</a>
+                              
+                            </span>
+                          </h4>
+                        </div>
                       </div>
-                      <div className="cont">
-                        <h6>
-                          <Link
-                            href={`/works3/works3-dark`}
-                          >
-                            {worksData[2].title}
-                          </Link>
-                        </h6>
-                        <h4>
-                          <Link
-                            href={`/project-details2/project-details2-dark`}
-                          >
-                            {worksData[2].secTex}
-                          </Link>
-                        </h4>
-                      </div>
-                    </div>
-                  </SwiperSlide>
+                    </SwiperSlide>
+
+                    ))}
                  
                 </Swiper>
 

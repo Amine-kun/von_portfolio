@@ -89,7 +89,7 @@ const ShowcasesFullScreen = () => {
                         <div className="caption">
                           <h1>
                             <Link
-                              href={`/project-details2/project-details2-dark`}
+                              href={`/project-details2/project-details2-dark?q=${slide.id}`}
                             >
                               <a>
                                 <div

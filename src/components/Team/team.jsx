@@ -27,8 +27,7 @@ const Team = () => {
                 We help to create visual strategies.
               </h3>
               <p>
-                We are Vie. We create award-winning websites, remarkable brands
-                and cutting-edge apps.Nullam imperdie.
+                We are Von Tech. We create Digital solutions and cutting-edge apps.
               </p>
               <div className="skills-box mt-40">
                 {teamsDate.skills.map((skill) => (

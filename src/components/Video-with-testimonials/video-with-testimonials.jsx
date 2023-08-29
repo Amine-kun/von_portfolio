@@ -73,21 +73,15 @@ const VideoWithTestimonials = () => {
                 >
                   <div className="item">
                     <p>
-                      Nulla metus metus ullamcorper vel tincidunt sed euismod
-                      nibh volutpat velit class aptent taciti sociosqu ad
-                      litora.
+                                          I'm absolutely pleased with Von Tech's service, they walk you through the entire process untill your are satisfied with your product, definitely recommend it.
+
                     </p>
                     <div className="info">
-                      <div className="img">
-                        <div className="img-box">
-                          <img src="/img/clients/1.jpg" alt="" />
-                        </div>
-                      </div>
                       <div className="cont">
                         <div className="author">
-                          <h6 className="author-name ">Alex Regelman</h6>
+                          <h6 className="author-name ">Ahmed Ali</h6>
                           <span className="author-details">
-                            Co-founder, Colabrio
+                            Founder, Manzili Hotel
                           </span>
                         </div>
                       </div>
@@ -95,21 +89,15 @@ const VideoWithTestimonials = () => {
                   </div>
                   <div className="item">
                     <p>
-                      Nulla metus metus ullamcorper vel tincidunt sed euismod
-                      nibh volutpat velit class aptent taciti sociosqu ad
-                      litora.
+                    This is my second business with this agency, No issues so far, looking forward for more future businesses.
+
                     </p>
                     <div className="info">
-                      <div className="img">
-                        <div className="img-box">
-                          <img src="/img/clients/2.jpg" alt="" />
-                        </div>
-                      </div>
                       <div className="cont">
                         <div className="author">
-                          <h6 className="author-name ">Alex Regelman</h6>
+                          <h6 className="author-name ">Ahmed Ali</h6>
                           <span className="author-details">
-                            Co-founder, Colabrio
+                            Founder, NextCars
                           </span>
                         </div>
                       </div>
@@ -117,21 +105,15 @@ const VideoWithTestimonials = () => {
                   </div>
                   <div className="item">
                     <p>
-                      Nulla metus metus ullamcorper vel tincidunt sed euismod
-                      nibh volutpat velit class aptent taciti sociosqu ad
-                      litora.
+                        Did not thought there will be a solution to my problem, untill i got recommended to Von Tech, Happy with the service.
+
                     </p>
                     <div className="info">
-                      <div className="img">
-                        <div className="img-box">
-                          <img src="/img/clients/3.jpg" alt="" />
-                        </div>
-                      </div>
                       <div className="cont">
                         <div className="author">
-                          <h6 className="author-name ">Alex Regelman</h6>
+                          <h6 className="author-name ">Amine tagh</h6>
                           <span className="author-details">
-                            Co-founder, Colabrio
+                            Co-founder, Co-working space
                           </span>
                         </div>
                       </div>

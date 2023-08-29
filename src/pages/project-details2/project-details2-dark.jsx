@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Navbar from "../../components/Navbar/navbar";
 import Footer from "../../components/Footer/footer";
 import DarkTheme from "../../layouts/Dark";
@@ -10,11 +10,15 @@ import ProjectDescription from "../../components/Project-description/project-des
 import ProjectVideo from "../../components/Project-video/project-video";
 import NextProject from "../../components/Next-project/next-project";
 
+import {client} from '../../client';
+
 const ProjectDetails2Dark = () => {
   const navbarRef = React.useRef(null);
   const logoRef = React.useRef(null);
 
-  React.useEffect(() => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
     var navbar = navbarRef.current,
       logo = logoRef.current;
     if (window.pageYOffset > 300) {
@@ -30,16 +34,30 @@ const ProjectDetails2Dark = () => {
       }
     });
   }, [navbarRef]);
+
+  useEffect(() => {
+    let id = window.location.search.substring(3);
+
+
+    const query = `*[_type == "work" && _id == '${id}']`;
+
+          client.fetch(query).then((data) => {
+            setData(data)
+          });
+    
+    
+  }, [])
+
+
   return (
     <DarkTheme>
       <Navbar nr={navbarRef} lr={logoRef} />
       <div className="wrapper">
-        <ProjectDetails2Header projectHeaderData={ProjectDate} />
-        <ProjectIntroduction projectIntroductionData={ProjectDate.intro} />
-        <ProjectGallery />
-        <ProjectDescription projectDescriptionData={ProjectDate.description} />
-        <ProjectVideo projectVideoDate={ProjectDate} />
-        <NextProject />
+      
+        <ProjectDetails2Header projectHeaderData={data[0]}/>
+        <ProjectIntroduction projectIntroductionData={data[0]} />
+        <ProjectGallery data={data[0]}/>
+        
         <Footer />
       </div>
     </DarkTheme>

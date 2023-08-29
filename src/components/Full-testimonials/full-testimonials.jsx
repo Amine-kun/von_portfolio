@@ -106,86 +106,74 @@ class FullTestimonials extends React.Component {
                   <div className="info valign">
                     <div className="cont">
                       <div className="author">
-                        <div className="img">
-                          <img src="/img/clients/1.jpg" alt="" />
-                        </div>
+                        
                         <h6 className="author-name color-font">
-                          Alex Regelman
+                          Ahmed Ali
                         </h6>
                         <span className="author-details">
-                          Co-founder, Colabrio
+                          Founder, Manzili Hotel
                         </span>
                       </div>
                     </div>
                   </div>
                   <p>
-                    I would highly recommend Vie Digital. I worked with the team
-                    on an animation for our ‘Click &amp; Collect’ service.
+                    I'm absolutely pleased with Von Tech's service, they walk you through the entire process untill your are satisfied with your product, definitely recommend it.
                   </p>
                 </div>
                 <div className="item">
                   <div className="info valign">
                     <div className="cont">
                       <div className="author">
-                        <div className="img">
-                          <img src="/img/clients/1.jpg" alt="" />
-                        </div>
+                        
                         <h6 className="author-name color-font">
-                          Alex Regelman
+                          Ahmed Ali
                         </h6>
                         <span className="author-details">
-                          Co-founder, Colabrio
+                          Founder, Manzili Hotel
                         </span>
                       </div>
                     </div>
                   </div>
                   <p>
-                    I would highly recommend Vie Digital. I worked with the team
-                    on an animation for our ‘Click &amp; Collect’ service.
+                    I'm absolutely pleased with Von Tech's service, they walk you through the entire process untill your are satisfied with your product, definitely recommend it.
                   </p>
                 </div>
                 <div className="item">
                   <div className="info valign">
                     <div className="cont">
                       <div className="author">
-                        <div className="img">
-                          <img src="/img/clients/1.jpg" alt="" />
-                        </div>
+                       
                         <h6 className="author-name color-font">
-                          Alex Regelman
+                          Ahmed Ali
                         </h6>
                         <span className="author-details">
-                          Co-founder, Colabrio
+                          Founder, NextCars
                         </span>
                       </div>
                     </div>
                   </div>
                   <p>
-                    I would highly recommend Vie Digital. I worked with the team
-                    on an animation for our ‘Click &amp; Collect’ service.
+                    This is my second business with this agency, No issues so far, looking forward for more future businesses.
                   </p>
                 </div>
                 <div className="item">
                   <div className="info valign">
                     <div className="cont">
                       <div className="author">
-                        <div className="img">
-                          <img src="/img/clients/1.jpg" alt="" />
-                        </div>
                         <h6 className="author-name color-font">
-                          Alex Regelman
+                          Amine tagh
                         </h6>
                         <span className="author-details">
-                          Co-founder, Colabrio
+                          Co-founder, Co-working space
                         </span>
                       </div>
                     </div>
                   </div>
                   <p>
-                    I would highly recommend Vie Digital. I worked with the team
-                    on an animation for our ‘Click &amp; Collect’ service.
+                    Did not thought there will be a solution to my problem, untill i got recommended to Von Tech, Happy with the service.
                   </p>
                 </div>
+               
               </Slider>
             </div>
           </div>

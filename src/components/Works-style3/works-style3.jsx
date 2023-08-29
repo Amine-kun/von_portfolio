@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, {useEffect} from "react";
 import Link from "next/link";
 import initIsotope from "../../common/initIsotope";
 
 const WorksStyle3 = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     setTimeout(() => {
       initIsotope();
     }, 1000);

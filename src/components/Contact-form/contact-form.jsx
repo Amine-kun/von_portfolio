@@ -2,7 +2,24 @@ import React from "react";
 import ContactFromDate from "../../data/sections/form-info.json";
 import { Formik, Form, Field } from "formik";
 
+import emailjs from '@emailjs/browser';
+
 const ContactForm = () => {
+
+  const form = React.useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    console.log(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, process.env.NEXT_PUBLIC_PUBLIC_KEY)
+
+    emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, form.current, process.env.NEXT_PUBLIC_PUBLIC_KEY)
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
   const messageRef = React.useRef(null);
   function validateEmail(value) {
     let error;
@@ -29,7 +46,6 @@ const ContactForm = () => {
                 }}
                 onSubmit={async (values) => {
                   await sendMessage(500);
-                  alert(JSON.stringify(values, null, 2));
                   // show message
 
                   messageRef.current.innerText =
@@ -45,7 +61,7 @@ const ContactForm = () => {
                 }}
               >
                 {({ errors, touched }) => (
-                  <Form id="contact-form">
+                  <Form id="contact-form" ref={form} onSubmit={sendEmail}>
                     <div className="messages" ref={messageRef}></div>
                     <div className="controls">
                       <div className="form-group">
