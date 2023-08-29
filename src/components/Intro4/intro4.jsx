@@ -4,16 +4,6 @@ import particlesBlackConfig from "../../config/pr-s-black";
 import Particles from "react-tsparticles";
 
 const Intro4 = ({ sliderRef, blackStar }) => {
-
-  React.useEffect(() => {
-    let pid = document.getElementById('particles-js');
-    pid.childNodes[0].classList.add("canva");
-
-    let child = document.querySelector('.canva')
-    child.style.position = 'unset';
-    
-  }, [])
-
   return (
     <header ref={sliderRef} className="particles circle-bg valign">
       <div className="container">

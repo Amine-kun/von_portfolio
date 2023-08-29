@@ -1,5 +1,5 @@
 {
-  "name": "VonProject",
+  "name": "vie-react",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -27,6 +27,7 @@
     "react-visibility-sensor": "^5.1.1",
     "sass": "^1.45.0",
     "slick-carousel": "^1.8.1",
+    "styled-components": "5.2",
     "swiper": "^7.3.0",
     "typewriter-effect": "^2.18.2"
   },

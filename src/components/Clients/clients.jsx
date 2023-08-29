@@ -51,7 +51,6 @@ const Clients = ({theme}) => {
                           <a
                             href={`https://${item.url}`}
                             target="_blank"
-                            rel="noreferrer"
                             className="link words chars splitting"
                             data-splitting
                           >
