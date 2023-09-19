@@ -1,32 +1,20 @@
 [
     {
-        "id": 1,
+        "id": "0aea664f-1d35-4c49-8127-0bde6350000d",
         "title": {"first": "Gaming platform", "second": "Web Applications"},
         "image": "/img/portfolio/metro/01.jpg",
         "sub": "Dev"
     },
     {
-      "id": 2,
+      "id": "21055784-8f2a-451d-aa4f-af49a3ecec31",
       "title": { "first": "Nutrition and Diet", "second": "Web Applications" },
       "image": "/img/portfolio/metro/02.jpg",
       "sub": "Dev"
     },
     {
-      "id": 3,
+      "id": "eef1ee6c-c930-488a-801e-29266cdb3259",
       "title": { "first": "Gallery and Social media", "second": "Web Applications" },
       "image": "/img/portfolio/metro/03.jpg",
-      "sub": "Dev"
-    },
-    {
-      "id": 4,
-      "title": { "first": "Management Systems", "second": "Mobile Applications" },
-      "image": "/img/portfolio/metro/04.jpg",
-      "sub": "Dev"
-    },
-    {
-      "id": 4,
-      "title": { "first": "Management Systems", "second": "Desktop Applications" },
-      "image": "/img/portfolio/metro/05.jpg",
       "sub": "Dev"
     }
 ]

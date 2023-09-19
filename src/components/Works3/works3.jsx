@@ -22,11 +22,13 @@ const Works3 = () => {
 
 
   useEffect(() => {
-          const query = '*[_type == "work"]';
+          (async ()=>{
+            const query = '*[_type == "work"]';
 
-          client.fetch(query).then((data) => {
+            const data = await client.fetch(query);
             setWorksData(data);
-          });
+            setTimeout(()=>{document.querySelector(".pace").classList.add("pace-inactive");},1000)
+          })();
         }, []);
 
 

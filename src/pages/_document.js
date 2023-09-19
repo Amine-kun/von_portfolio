@@ -15,13 +15,13 @@ class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
             name="keywords"
-            content="HTML5 Template Vie onepage themeforest"
+            content="Von frontEnd backEnd agency developement"
           />
           <meta
             name="description"
-            content="Vie - Onepage Multi-Purpose HTML5 Template"
+            content="VON Project & Co - Development Agency"
           />
-          <meta name="author" content="" />
+          <meta name="author" content="VonProject" />
           <link rel="shortcut icon" href="/img/favicon.ico" />
           <link
             href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
