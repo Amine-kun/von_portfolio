@@ -12,28 +12,44 @@ import AboutUs3 from "../../components/About-us3/about-us3";
 import Services3 from "../../components/Services3/services3";
 import MinimalArea2 from "../../components/Minimal-Area2/minimal-area2";
 
+import NavbarFullMenu from "../../components/Navbar-full-menu/navbar.full-menu";
+
+
 const Homepage5 = () => {
-  const navbarRef = React.useRef(null);
-  const logoRef = React.useRef(null);
 
   React.useEffect(() => {
-    var navbar = navbarRef.current;
-    if (window.pageYOffset > 300) {
-      navbar.classList.add("nav-scroll");
-    } else {
-      navbar.classList.remove("nav-scroll");
+    const getWidth = () =>{
+      const {innerWidth, innerHeight} = window;
+      return {innerWidth, innerHeight};
     }
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
-        navbar.classList.add("nav-scroll");
+
+    let navbar = document.querySelector('.container-fluid');
+
+    const handleWindowResize = () =>{
+      let width = getWidth();
+    
+      if (width.innerWidth > 820) {
+        console.log('xd')
+        navbar.classList.add("limitter");
       } else {
-        navbar.classList.remove("nav-scroll");
+        console.log('xd2')
+        navbar.classList.remove("limitter");
       }
-    });
-  }, [navbarRef]);
+    }
+
+    handleWindowResize();
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+
   return (
     <DarkTheme>
-      <Navbar nr={navbarRef} lr={logoRef} />
+      
+      <NavbarFullMenu />
       <Intro4 />
       <AboutUs3 />
       <Works3 />

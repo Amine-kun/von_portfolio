@@ -35,6 +35,7 @@ const Navbar = ({ lr, nr, theme }) => {
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          onClick={(e)=>handleMobileDropdown(e)}
         >
           <span className="icon-bar">
             <i className="fas fa-bars"></i>
