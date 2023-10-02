@@ -25,7 +25,7 @@ const Footer = ({ hideBGCOLOR }) => {
                   <span className="icon pe-7s-mail"></span>
                   <div className="cont">
                     <h6>Email Us</h6>
-                    <p>support@vonproject.com</p>
+                    <p>business@vonproject.co</p>
                   </div>
                 </li>
                 <li>
