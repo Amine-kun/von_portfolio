@@ -18,31 +18,49 @@ import NavbarFullMenu from "../../components/Navbar-full-menu/navbar.full-menu";
 const Homepage5 = () => {
 
   React.useEffect(() => {
+
+    let navbar = document.querySelector('.container-fluid');
+    let container = document.querySelector('.topnav');
+
+    container.classList.add('nav_cus');
+
     const getWidth = () =>{
       const {innerWidth, innerHeight} = window;
       return {innerWidth, innerHeight};
     }
 
-    let navbar = document.querySelector('.container-fluid');
+    const getScroll = () =>{
+      return window.pageYOffset;
+    }
 
     const handleWindowResize = () =>{
       let width = getWidth();
     
       if (width.innerWidth > 820) {
-        console.log('xd')
         navbar.classList.add("limitter");
       } else {
-        console.log('xd2')
         navbar.classList.remove("limitter");
+      }
+    }
+
+    const handleScrolling = () =>{
+      let offset = getScroll()
+      if(offset >= 100 ){
+        container.classList.add("nav_scroll");
+      } else {
+        container.classList.remove("nav_scroll");
       }
     }
 
     handleWindowResize();
 
     window.addEventListener('resize', handleWindowResize);
+    window.addEventListener('scroll', handleScrolling)
 
     return () => {
       window.removeEventListener('resize', handleWindowResize);
+      window.removeEventListener('scroll', handleScrolling);
+      container.classList.remove('nav_cus');
     };
   }, []);
 
