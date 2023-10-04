@@ -6,35 +6,60 @@ import DarkTheme from "../../layouts/Dark";
 import ContactHeader from "../../components/Contact-header/contact-header";
 import ContactForm from "../../components/Contact-form/contact-form";
 
+import NavbarFullMenu from "../../components/Navbar-full-menu/navbar.full-menu";
+
 const Contact = () => {
-  const navbarRef = React.useRef(null);
-  const logoRef = React.useRef(null);
-
+  
   React.useEffect(() => {
-    document.querySelector("body").classList.add("contact-page");
 
-    var navbar = navbarRef.current,
-      logo = logoRef.current;
-    if (window.pageYOffset > 300) {
-      navbar.classList.add("nav-scroll");
-    } else {
-      navbar.classList.remove("nav-scroll");
+    let navbar = document.querySelector('.container-fluid');
+    let container = document.querySelector('.topnav');
+
+    container.classList.add('nav_cus');
+
+    const getWidth = () =>{
+      const {innerWidth, innerHeight} = window;
+      return {innerWidth, innerHeight};
     }
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
-        navbar.classList.add("nav-scroll");
+
+    const getScroll = () =>{
+      return window.pageYOffset;
+    }
+
+    const handleWindowResize = () =>{
+      let width = getWidth();
+    
+      if (width.innerWidth > 820) {
+        navbar.classList.add("limitter");
       } else {
-        navbar.classList.remove("nav-scroll");
+        navbar.classList.remove("limitter");
       }
-    });
+    }
+
+    const handleScrolling = () =>{
+      let offset = getScroll()
+      if(offset >= 100 ){
+        container.classList.add("nav_scroll");
+      } else {
+        container.classList.remove("nav_scroll");
+      }
+    }
+
+    handleWindowResize();
+
+    window.addEventListener('resize', handleWindowResize);
+    window.addEventListener('scroll', handleScrolling)
+
     return () => {
-      document.querySelector("body").classList.remove("contact-page");
+      window.removeEventListener('resize', handleWindowResize);
+      window.removeEventListener('scroll', handleScrolling);
+      container.classList.remove('nav_cus');
     };
-  }, [navbarRef]);
+  }, []);
 
   return (
     <DarkTheme>
-      <Navbar nr={navbarRef} lr={logoRef} />
+      <NavbarFullMenu />
       <ContactHeader />
       <div className="main-content">
         <ContactForm />
