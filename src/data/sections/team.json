@@ -17,6 +17,12 @@
       "image": "/img/team/3.jpg",
       "title": "Oussama",
       "sub": "Developer, Von Project"
+    },
+    {
+      "id": 4,
+      "image": "/img/team/4.jpg",
+      "title": "Mohamed Amine",
+      "sub": "Accountant, Von Project"
     }
   ],
   "skills": [

@@ -88,8 +88,10 @@ const ShowcasesFullScreen = () => {
                       <div className="col-lg-12">
                         <div className="caption">
                           <h1>
-                            <Link
+                            <a
                               href={`/project-details2/project-details2-dark?q=${slide.id}`}
+                              arget="_blank"
+                              rel="noreferrer"
                             >
                               <a>
                                 <div
@@ -102,19 +104,21 @@ const ShowcasesFullScreen = () => {
                                   {slide.title.second}
                                 </span>
                               </a>
-                            </Link>
+                            </a>
                             <div className="bord"></div>
                           </h1>
                           <div className="discover">
-                            <Link
+                            <a
                               href={`/project-details2/project-details2-dark?q=${slide.id}`}
+                              target="_blank"
+                              rel="noreferrer"
                             >
                               <a>
                                 <span>
                                   Explore <br /> More
                                 </span>
                               </a>
-                            </Link>
+                            </a>
                           </div>
                         </div>
                       </div>

@@ -10,30 +10,60 @@ import ProjectDescription from "../../components/Project-description/project-des
 import ProjectVideo from "../../components/Project-video/project-video";
 import NextProject from "../../components/Next-project/next-project";
 
+import NavbarFullMenu from "../../components/Navbar-full-menu/navbar.full-menu";
+
 import {client} from '../../client';
 
 const ProjectDetails2Dark = () => {
-  const navbarRef = React.useRef(null);
-  const logoRef = React.useRef(null);
 
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    var navbar = navbarRef.current,
-      logo = logoRef.current;
-    if (window.pageYOffset > 300) {
-      navbar.classList.add("nav-scroll");
-    } else {
-      navbar.classList.remove("nav-scroll");
+  React.useEffect(() => {
+
+    let navbar = document.querySelector('.container-fluid');
+    let container = document.querySelector('.topnav');
+
+    container.classList.add('nav_cus');
+
+    const getWidth = () =>{
+      const {innerWidth, innerHeight} = window;
+      return {innerWidth, innerHeight};
     }
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
-        navbar.classList.add("nav-scroll");
+
+    const getScroll = () =>{
+      return window.pageYOffset;
+    }
+
+    const handleWindowResize = () =>{
+      let width = getWidth();
+    
+      if (width.innerWidth > 820) {
+        navbar.classList.add("limitter");
       } else {
-        navbar.classList.remove("nav-scroll");
+        navbar.classList.remove("limitter");
       }
-    });
-  }, [navbarRef]);
+    }
+
+    const handleScrolling = () =>{
+      let offset = getScroll()
+      if(offset >= 100 ){
+        container.classList.add("nav_scroll");
+      } else {
+        container.classList.remove("nav_scroll");
+      }
+    }
+
+    handleWindowResize();
+
+    window.addEventListener('resize', handleWindowResize);
+    window.addEventListener('scroll', handleScrolling)
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+      window.removeEventListener('scroll', handleScrolling);
+      container.classList.remove('nav_cus');
+    };
+  }, []);
 
   useEffect(() => {
     let id = window.location.search.substring(3);
@@ -51,7 +81,7 @@ const ProjectDetails2Dark = () => {
 
   return (
     <DarkTheme>
-      <Navbar nr={navbarRef} lr={logoRef} />
+      <NavbarFullMenu />
       <div className="wrapper">
       
         <ProjectDetails2Header projectHeaderData={data[0]}/>

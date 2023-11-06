@@ -120,3 +120,49 @@ body.hideX .pace {
 .nav_cus{
   border-bottom: 2px solid transparent
 }
+
+.color-font{
+  background: linear-gradient(to right, #26C8CD, #52D3A6, #D5F431);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.line{
+   background: linear-gradient(to right, #26C8CD, #52D3A6, #D5F431);
+}
+
+.feat .items:before{
+  background: linear-gradient(to right, #26C8CD, #52D3A6, #D5F431);
+}
+.back-color{
+  background: linear-gradient(to right, #26C8CD, #52D3A6, #D5F431);
+}
+
+.sub-title h6{
+  background: linear-gradient(to right, #26C8CD, #52D3A6, #D5F431);
+}
+
+.skills-box .skill-progress .progres{
+  background: linear-gradient(to right, #26C8CD, #52D3A6, #D5F431);
+}
+
+.agency .imgsec .exp:before{
+ background: linear-gradient(to right, #26C8CD, #52D3A6, #D5F431);
+}
+
+.block-sec .testim-box:after{
+ background: linear-gradient(to right, #26C8CD, #52D3A6, #D5F431) !important; 
+}
+
+.services .item-box .icon:after{
+ background: linear-gradient(to right, #26C8CD, #52D3A6, #D5F431) !important; 
+}
+
+.topnav .logo{
+  width: 100px;
+}
+
+.topnav .container, .topnav .container-fluid{
+  display: flex;
+    align-items: center;
+}
